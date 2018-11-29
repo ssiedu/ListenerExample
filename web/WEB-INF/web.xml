@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <listener>
+        <description>ServletContextListener</description>
+        <listener-class>mypkg.StartHandler</listener-class>
+    </listener>
+    <listener>
+        <description>HttpSessionListener</description>
+        <listener-class>mypkg.UserSessionHandler</listener-class>
+    </listener>
+    <listener>
+        <description>RequestListener</description>
+        <listener-class>mypkg.RequestHandler</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>ShowProducts</servlet-name>
+        <servlet-class>ShowProducts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserList</servlet-name>
+        <servlet-class>UserList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowProducts</servlet-name>
+        <url-pattern>/ShowProducts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserList</servlet-name>
+        <url-pattern>/UserList</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
